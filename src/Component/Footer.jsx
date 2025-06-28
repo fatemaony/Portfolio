@@ -6,11 +6,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
-    { name: 'Home', sectionId: 'home' },
+    { name: 'Home', sectionId: 'hero' },
     { name: 'About', sectionId: 'about' },
-    { name: 'Contact', sectionId: 'contact' },
     { name: 'Skills', sectionId: 'skills' },
-    { name: 'Projects', sectionId: 'projects' }
+    { name: 'Projects', sectionId: 'projects' },
+    { name: 'Contact', sectionId: 'contact' },
   ];
 
   const socialLinks = [

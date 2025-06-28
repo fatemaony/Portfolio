@@ -8,8 +8,8 @@ const Contact = () => {
     {
       icon: <FiMail className="text-3xl text-primary" />,
       title: "Email",
-      info: "fatemaony@example.com",
-      action: "mailto:fatemaony@example.com"
+      info: "fatema77095@gamil.com",
+      action: "mailto:fatema77095@gamil.com"
     },
     {
       icon: <FiMapPin className="text-3xl text-secondary" />,
@@ -20,8 +20,8 @@ const Contact = () => {
     {
       icon: <FiPhone className="text-3xl text-accent" />,
       title: "Phone",
-      info: "+880 1234 567890",
-      action: "tel:+8801234567890"
+      info: "+880 1516193234",
+      action: "tel:+8801516193234"
     }
   ];
 

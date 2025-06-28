@@ -41,7 +41,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-16 px-4 md:px-8 lg:px-16 bg-base-100 min-h-[60vh] flex items-center">
+    <section id="about" className="py-20 px-4 md:px-8 lg:px-16 bg-base-100 min-h-[60vh] flex items-center">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial="hidden"

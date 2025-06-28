@@ -6,7 +6,7 @@ import ellipes1 from '../assets/Logo.png';
 const Navbar = () => {
   
   const navItems = [
-    { name: 'Home', sectionId: 'Home' },
+    { name: 'Home', sectionId: 'hero' },
     { name: 'About', sectionId: 'about' },
     { name: 'Skills', sectionId: 'skills' },
     { name: 'Projects', sectionId: 'projects' },
@@ -96,7 +96,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="btn btn-secondary rounded-full px-6 shadow-lg hover:shadow-secondary/50 transition-shadow"
-          href="#resume"  // Changed to anchor link
+          href="#resume"  
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('resume');

@@ -30,7 +30,7 @@ const Project = () => {
       description: "Modern responsive portfolio showcasing projects and skills with smooth animations and clean design. Built with performance and accessibility in mind.",
       tags: ["Javascript", "Framer Motion", "Tailwind CSS"],
       github: "https://github.com/fatemaony/Portfolio.git",
-      live: "",
+      live: "https://lovely-sopapillas-4bfa0a.netlify.app",
       image: portfolioImage 
     }
   ];

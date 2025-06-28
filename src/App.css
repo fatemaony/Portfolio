@@ -141,3 +141,6 @@ a.active {
   @apply text-amber-700;
 
 }
+html{
+    scroll-behavior: smooth ;
+}
