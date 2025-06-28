@@ -1,0 +1,122 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
+import developerIllustration from '../assets/Lottie/Hero.json'; 
+import Lottie from 'lottie-react';
+const Hero = () => {
+  const socialLinks = [
+    { icon: <FaGithub />, url: 'https://github.com/fatemaony' },
+    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/fatemaony' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/fatemaony' },
+    { icon: <HiOutlineMail />, url: 'mailto:fatema@example.com' }
+  ];
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-base-100 to-base-200 px-4 md:px-8 lg:px-16 py-20">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Text Content */}
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.1 }}
+          className="text-center lg:text-left"
+        >
+          <motion.p 
+            variants={textVariants}
+            className="text-xl md:text-2xl font-medium text-primary mb-2"
+          >
+            Hi, I'm
+          </motion.p>
+          
+          <motion.h1 
+            variants={textVariants}
+            className="text-4xl md:text-6xl font-bold text-base-content mb-4"
+          >
+            Fatema Akter
+          </motion.h1>
+          
+          <motion.h3 
+            variants={textVariants}
+            className="text-2xl md:text-3xl font-semibold text-secondary mb-8"
+          >
+            Full Stack Developer
+          </motion.h3>
+          
+          <motion.p 
+            variants={textVariants}
+            className="text-lg text-base-content/80 mb-8 max-w-lg mx-auto lg:mx-0"
+          >
+            I build exceptional digital experiences with modern web technologies.
+            Passionate about creating efficient, scalable, and user-friendly applications.
+          </motion.p>
+          
+          <motion.div 
+            variants={textVariants}
+            className="flex flex-wrap gap-4 justify-center lg:justify-start"
+          >
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#contact"
+              className="btn btn-primary px-8 rounded-full shadow-lg"
+            >
+              Contact Me
+            </motion.a>
+            
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/resume.pdf"
+              download
+              className="btn btn-outline px-8 rounded-full border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white flex items-center gap-2"
+            >
+              <FaFileDownload /> Resume
+            </motion.a>
+          </motion.div>
+          
+          <motion.div 
+            variants={textVariants}
+            className="flex justify-center lg:justify-start gap-4 mt-8"
+          >
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="btn btn-ghost btn-circle text-xl text-primary hover:text-secondary hover:bg-base-300/50"
+                aria-label={`${link.icon.type.name} profile`}
+              >
+                {link.icon}
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
+        
+        {/* Image/Illustration */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="relative flex justify-center"
+        >
+          <div className="relative w-full max-w-md">
+            <div className="absolute -inset-4 bg-primary/10 rounded-3xl rotate-6"></div>
+            <div className="absolute -inset-4 bg-secondary/10 rounded-3xl -rotate-3"></div>
+            <Lottie animationData={developerIllustration} loop={true}></Lottie>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
