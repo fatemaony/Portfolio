@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiEye } from 'react-icons/fi'; 
-import { FaReact } from 'react-icons/fa';
+import { FiGithub, FiExternalLink, FiEye } from 'react-icons/fi';
+import image1 from '../assets/Image1.png'; 
+import image2 from '../assets/Image2.png';
+import portfolioImage from '../assets/Portfolio.png';
+
 
 const Project = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -9,26 +12,26 @@ const Project = () => {
     {
       title: "ReadRipple",
       description: "Read Ripple is a dynamic web platform designed for book lovers to organize their reading journey, explore new books through community reviews, and stay motivated with reading progress tracking.",
-      tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS","Javascript", "Firebase"],
+      tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Javascript", "Firebase"],
       github: "https://github.com/fatemaony/Virtual-Bookshelf-Client.git",
       live: "https://astounding-klepon-e1d5c3.netlify.app",
-      image: "/ecommerce-demo.jpg"
+      image: image1 
     },
     {
       title: "Roomies",
       description: "Roomies is a full-stack web application that allows users to find compatible roommates based on their preferences, location, budget, and lifestyle. Users can register, add posts, browse listings, and connect with potential roommates through a seamless interface",
-      tags: ["React", "Firebase","Javascript", "Tailwind CSS","MongoDB", "Express","node.js"],
+      tags: ["React", "Firebase", "Javascript", "Tailwind CSS", "MongoDB", "Express", "Node.js"],
       github: "https://github.com/fatemaony/Roommate-Finder-Client.git",
       live: "https://famous-tiramisu-4acaab.netlify.app/browselisting",
-      image: "/taskapp-demo.jpg"
+      image: image2 
     },
     {
       title: "Portfolio Website",
       description: "Modern responsive portfolio showcasing projects and skills with smooth animations and clean design. Built with performance and accessibility in mind.",
-      tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      github: "#",
-      live: "#",
-      image: "/portfolio-demo.jpg"
+      tags: ["Javascript", "Framer Motion", "Tailwind CSS"],
+      github: "https://github.com/fatemaony/Portfolio.git",
+      live: "",
+      image: portfolioImage 
     }
   ];
 
@@ -93,10 +96,11 @@ const Project = () => {
                   onMouseLeave={() => setHoveredIndex(null)}
                   onClick={() => window.open(project.live, '_blank')}
                 >
-                  <div className="w-full h-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <div className="text-4xl font-bold text-primary/30">Project {index + 1}</div>
-                    {/* Replace with: <img src={project.image} alt={project.title} className="w-full h-full object-cover" /> */}
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover"
+                  />
                   {hoveredIndex === index && (
                     <motion.div 
                       initial={{ opacity: 0 }}
@@ -111,7 +115,7 @@ const Project = () => {
                   )}
                 </div>
 
-                {/* Project Content - Remaining exactly the same */}
+                {/* Project Content */}
                 <div className="lg:w-1/2 w-full">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-base-content">{project.title}</h3>
                   <p className="text-base-content/80 mb-6">{project.description}</p>

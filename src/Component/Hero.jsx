@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi';
 import developerIllustration from '../assets/Lottie/Hero.json'; 
 import Lottie from 'lottie-react';
+
 const Hero = () => {
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/fatemaony' },
@@ -18,8 +19,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-base-100 to-base-200 px-4 md:px-8 lg:px-16 py-20">
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-base-100 to-base-200 px-4 md:px-8 lg:px-16 py-12">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Text Content */}
         <motion.div 
           initial="hidden"
@@ -36,21 +37,21 @@ const Hero = () => {
           
           <motion.h1 
             variants={textVariants}
-            className="text-4xl md:text-6xl font-bold text-base-content mb-4"
+            className="text-4xl md:text-5xl font-bold text-base-content mb-3"
           >
             Fatema Akter
           </motion.h1>
           
           <motion.h3 
             variants={textVariants}
-            className="text-2xl md:text-3xl font-semibold text-secondary mb-8"
+            className="text-2xl md:text-2xl font-semibold text-secondary mb-6"
           >
             Full Stack Developer
           </motion.h3>
           
           <motion.p 
             variants={textVariants}
-            className="text-lg text-base-content/80 mb-8 max-w-lg mx-auto lg:mx-0"
+            className="text-base md:text-lg text-base-content/80 mb-6 max-w-lg mx-auto lg:mx-0"
           >
             I build exceptional digital experiences with modern web technologies.
             Passionate about creating efficient, scalable, and user-friendly applications.
@@ -58,13 +59,13 @@ const Hero = () => {
           
           <motion.div 
             variants={textVariants}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start"
+            className="flex flex-wrap gap-3 justify-center lg:justify-start"
           >
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#contact"
-              className="btn btn-primary px-8 rounded-full shadow-lg"
+              className="btn btn-primary px-6 py-2 rounded-full shadow-lg text-sm md:text-base"
             >
               Contact Me
             </motion.a>
@@ -74,7 +75,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               href="/resume.pdf"
               download
-              className="btn btn-outline px-8 rounded-full border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white flex items-center gap-2"
+              className="btn btn-outline px-6 py-2 rounded-full border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white flex items-center gap-2 text-sm md:text-base"
             >
               <FaFileDownload /> Resume
             </motion.a>
@@ -82,7 +83,7 @@ const Hero = () => {
           
           <motion.div 
             variants={textVariants}
-            className="flex justify-center lg:justify-start gap-4 mt-8"
+            className="flex justify-center lg:justify-start gap-3 mt-6"
           >
             {socialLinks.map((link, index) => (
               <motion.a
@@ -90,9 +91,9 @@ const Hero = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
+                whileHover={{ y: -3, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="btn btn-ghost btn-circle text-xl text-primary hover:text-secondary hover:bg-base-300/50"
+                className="btn btn-ghost btn-circle text-lg text-primary hover:text-secondary hover:bg-base-300/50"
                 aria-label={`${link.icon.type.name} profile`}
               >
                 {link.icon}
@@ -108,10 +109,10 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="relative flex justify-center"
         >
-          <div className="relative w-full max-w-md">
-            <div className="absolute -inset-4 bg-primary/10 rounded-3xl rotate-6"></div>
-            <div className="absolute -inset-4 bg-secondary/10 rounded-3xl -rotate-3"></div>
-            <Lottie animationData={developerIllustration} loop={true}></Lottie>
+          <div className="relative w-full max-w-sm">
+            <div className="absolute -inset-3 bg-primary/10 rounded-3xl rotate-6"></div>
+            <div className="absolute -inset-3 bg-secondary/10 rounded-3xl -rotate-3"></div>
+            <Lottie animationData={developerIllustration} loop={true} />
           </div>
         </motion.div>
       </div>
