@@ -31,32 +31,31 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="footer bg-primary text-white p-10"
+      className="footer bg-primary text-white py-10 px-4 sm:px-6 lg:px-8"
     >
-      <div className="container flex flex-col md:flex-row items-center justify-between mx-auto">
-        <div>
-          {/* Navigation Links */}
-          <motion.nav 
-            className="grid grid-flow-col gap-6 justify-center mb-8"
-          >
-            {footerLinks.map((link) => (
-              <motion.a
-                key={link.sectionId}
-                whileHover={{ scale: 1.1, color: '#f4f2fc' }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleNavClick(link.sectionId)}
-                className="link link-hover font-medium text-white text-lg cursor-pointer transition-colors duration-300"
-              >
-                {link.name}
-              </motion.a>
-            ))}
-          </motion.nav>
-        </div>
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+        {/* Navigation Links - Full width on mobile, auto width on larger screens */}
+        <motion.nav 
+          className="w-full lg:w-auto flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 lg:mb-0"
+        >
+          {footerLinks.map((link) => (
+            <motion.a
+              key={link.sectionId}
+              whileHover={{ scale: 1.1, color: '#f4f2fc' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavClick(link.sectionId)}
+              className="link link-hover font-medium text-white text-base sm:text-lg cursor-pointer transition-colors duration-300 px-2 py-1"
+            >
+              {link.name}
+            </motion.a>
+          ))}
+        </motion.nav>
 
-        <div className="flex flex-col items-center">
+        {/* Social and Copyright Section - Centered on all screens */}
+        <div className="w-full lg:w-auto flex flex-col items-center">
           {/* Social Icons */}
-          <motion.nav className="flex justify-center mb-8">
-            <div className="grid grid-flow-col gap-6">
+          <motion.nav className="w-full flex justify-center mb-6 sm:mb-8">
+            <div className="flex gap-4 sm:gap-6">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
@@ -82,9 +81,9 @@ const Footer = () => {
             initial={{ y: 20 }}
             whileInView={{ y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-center"
+            className="text-center w-full"
           >
-            <p className="text-sm md:text-base text-white/80">
+            <p className="text-xs sm:text-sm md:text-base text-white/80">
               Copyright © {currentYear} - All right reserved by 
               <motion.span 
                 whileHover={{ scale: 1.05 }}

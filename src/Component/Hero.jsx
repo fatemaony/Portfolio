@@ -8,7 +8,7 @@ import Lottie from 'lottie-react';
 const Hero = () => {
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/fatemaony' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/fatemaony' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/fatema-akter-a299a6317/' },
     { icon: <FaTwitter />, url: 'https://twitter.com/fatemaony' },
     { icon: <HiOutlineMail />, url: 'mailto:fatema@example.com' }
   ];

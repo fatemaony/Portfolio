@@ -26,7 +26,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaLinkedinIn />, url: "https://linkedin.com/in/fatemaony" },
+    { icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/fatema-akter-a299a6317/" },
     { icon: <FaGithub />, url: "https://github.com/fatemaony" },
     { icon: <FaTwitter />, url: "https://twitter.com/fatemaony" }
   ];
